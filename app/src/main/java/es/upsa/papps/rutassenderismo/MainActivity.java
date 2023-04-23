@@ -1,9 +1,14 @@
 package es.upsa.papps.rutassenderismo;
 
+import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContract;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.content.Context;
@@ -29,20 +34,36 @@ public class MainActivity extends AppCompatActivity {
 
 
     private ActivityMainBinding viewBinding;
-    //private MainViewModel viewModel;
-    //private RutasAdapter rutasAdapter = new RutasAdapter();
+    private MainViewModel viewModel;
+    private RutasAdapter rutasAdapter = new RutasAdapter();
 
-
+    ActivityResultLauncher<String> launcher = registerForActivityResult(new NewRutaActivityResultContract(),
+            result -> onRutaCreated(result)
+    );
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.viewBinding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView( viewBinding.getRoot() );    }
+        setContentView( viewBinding.getRoot() );
+
+        this.viewModel = new ViewModelProvider(this).get(MainViewModel.class);
+
+
+        listarRutas();
+        rutasAdapter.setOnItemClick( (position,ruta) -> showRutasActivity(ruta.getId()));//te muestra el nombre de la ruta
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        //RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, 2, LinearLayoutManager.VERTICAL,false); // si lo quieres en pares
+        viewBinding.rv.setLayoutManager(layoutManager);
+        viewBinding.rv.setAdapter( rutasAdapter );
+
+
+        viewBinding.btNew.setOnClickListener(v ->  launcher.launch("") );
+    }
 
 
 
-    /*
+
     private void onRutaCreated(NewRutaActivityResult result)
     {
         if (result.isRutaCreated())
@@ -55,12 +76,11 @@ public class MainActivity extends AppCompatActivity {
     private void listarRutas()
     {
         rutasAdapter.setRutas(viewModel.getRutas() );
-
     }
 
     void showRutasActivity(String id)
     {
-        Intent intent = new Intent(this, RutasActivity.class);
+        Intent intent = new Intent(this, RutaActivity.class);
         intent.putExtra("idRuta",id);
         startActivity(intent);
     }
@@ -108,5 +128,5 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-*/
+
 }

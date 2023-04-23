@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class RutasAdapter //extends RecyclerView.Adapter<RutasAdapter.RutaViewHolder>
+import es.upsa.papps.rutassenderismo.databinding.RutaItemBinding;
+
+public class RutasAdapter extends RecyclerView.Adapter<RutasAdapter.RutaViewHolder>
 {
     public interface OnItemClick
     {
@@ -28,19 +30,19 @@ public class RutasAdapter //extends RecyclerView.Adapter<RutasAdapter.RutaViewHo
     public void setOnItemClick(OnItemClick onItemClick) {
         this.onItemClick = onItemClick;
     }
-/*
+
     @NonNull
     @Override
     public RutaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         RutaItemBinding viewBinding = RutaItemBinding.inflate(layoutInflater, parent ,false);
-        return new PeliculaViewHolder(viewBinding);
+        return new RutaViewHolder(viewBinding);
 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PeliculaViewHolder holder, int position)
+    public void onBindViewHolder(@NonNull RutaViewHolder holder, int position)
     {
         Ruta ruta = rutas.get(position);
         holder.bind(ruta);
@@ -69,12 +71,12 @@ public class RutasAdapter //extends RecyclerView.Adapter<RutasAdapter.RutaViewHo
         public void bind(Ruta ruta)
         {
             this.ruta = ruta;
-            viewBinding.tvNombre_ruta.setText(pelicula.getTitulo()); //---cambiar
-            viewBinding.tvDirector.setText(pelicula.getTitulo());
-            viewBinding.tvValoracion.setText(String.valueOf(pelicula.getValoracion()));
-            viewBinding.tvValoracion.setText(String.valueOf(pelicula.getValoracion()));
+            viewBinding.tvNombreRuta.setText(ruta.getNombre_ruta());
+            viewBinding.tvExplorador.setText(ruta.getExplorador());
+            viewBinding.tvValoracion.setText(String.valueOf(ruta.getValoracion()));
+            viewBinding.tvDificultad.setText(String.valueOf(ruta.getDificultad()));
         }
     }
-    */
+
 
 }

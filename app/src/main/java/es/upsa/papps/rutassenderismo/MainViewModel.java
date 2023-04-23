@@ -18,7 +18,7 @@ public class MainViewModel extends AndroidViewModel
         this.repository = app.getRepository();
     }
 
-    public List<Ruta> getPeliculas()
+    public List<Ruta> getRutas()
     {
         return repository.getRutas();
     }

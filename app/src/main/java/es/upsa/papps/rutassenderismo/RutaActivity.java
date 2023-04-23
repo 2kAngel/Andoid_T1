@@ -6,6 +6,8 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import es.upsa.papps.rutassenderismo.databinding.ActivityRutaBinding;
+
 public class RutaActivity extends AppCompatActivity
 {
     ActivityRutaBinding viewBinding;
@@ -18,15 +20,16 @@ public class RutaActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         this.viewBinding = ActivityRutaBinding.inflate(getLayoutInflater());
         setContentView(viewBinding.getRoot());
-        this.viewModel = new ViewModelProvider(this).get(RutaViewModel.class);
+        this.viewModel = new ViewModelProvider(this).get(RutasViewModel.class);
 
         Intent intent = getIntent();
-        String idPelicula = intent.getStringExtra("idRuta");
+        String idRuta = intent.getStringExtra("idRuta");
         Ruta ruta = viewModel.findRutaByid(idRuta);
-/*
-        viewBinding.tvId.setText(pelicula.getId());
-        viewBinding.tvTitulo.setText(pelicula.getTitulo());
-        viewBinding.tvDirector.setText(pelicula.getDirector());
-        viewBinding.tvValoracion.setText(String.valueOf(pelicula.getValoracion()));
-*/
+
+        viewBinding.tvId.setText("ID -> "+ruta.getId());
+        viewBinding.tvNombreRuta.setText("Ruta -> "+ruta.getNombre_ruta());
+        viewBinding.tvExplorador.setText("Explorador -> "+ruta.getExplorador());
+        viewBinding.tvValoracion.setText("Valoracion -> " + String.valueOf(ruta.getValoracion())+"/10");
+        viewBinding.tvDificultad.setText("Dificultad -> "+String.valueOf(ruta.getDificultad())+"/100");
+    }
 }
