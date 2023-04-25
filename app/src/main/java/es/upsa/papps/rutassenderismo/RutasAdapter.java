@@ -24,7 +24,7 @@ public class RutasAdapter extends RecyclerView.Adapter<RutasAdapter.RutaViewHold
 
     public void setRutas(List<Ruta> rutas) {
         this.rutas = rutas;
-        //notifyDataSetChanged();
+        notifyDataSetChanged();
     }
 
     public void setOnItemClick(OnItemClick onItemClick) {
