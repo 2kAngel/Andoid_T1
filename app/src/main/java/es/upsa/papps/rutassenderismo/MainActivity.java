@@ -13,24 +13,21 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.view.View;
+import android.widget.ImageButton;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.Locale;
 
 import es.upsa.papps.rutassenderismo.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
-
-//Pasos Iniciar proyecto
-    //0-> Mete las dependecias: projectStructure -> Dependecies -> app ->Library D -> andoindx.lifecycle/lifecycle-viewModel(2.5.1) || andoindx.lifecycle/lifecycle-viewModel-savedState(2.5.1)||androidx.activity/activity(1.6.1(la 1ª ni alfa ni beta))|| androidx.fragment/fragment(1.5.5(1ª ni alfa ni beta))
-    //1-> Build Grandle(app) : debajo de compileOptions{} Add : viewBinding{ enabled true }
-    //2-> En MainActivity: Creamos -> private ActivityMainBinding viewBinding;
-    //3-> Editas el "onCreate" debajo de super..-> this.viewBinding = ActivityMainBinding.inflate(getLayoutInflater()); (debajo) setContentView( viewBinding.getRoot() );
-    //4-> Creas X(Rutas)Application, extends Application + creas el onCreate
-    //5-> Abres manifests -> AndroidManifest.xml -> Add name: (.X(Rutas)Application)
-    //6-> Creas MainViewModel extends AndroidViewModel + constructor
-    //7-> En MainActivity creas el viewModel :  private MainViewModel viewModel;
-    //8-> Add en MainActivity en Oncreate debajo el : this.viewModel = new ViewModelProvider(this).get(MainViewModel.class)
-    //9-> Creamos X("Ruta")
-    //10->Creamos el repositorio de X(Rutas)
 
 
     private ActivityMainBinding viewBinding;
@@ -43,6 +40,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+
+
         super.onCreate(savedInstanceState);
         this.viewBinding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView( viewBinding.getRoot() );
@@ -59,6 +60,46 @@ public class MainActivity extends AppCompatActivity {
 
 
         viewBinding.btNew.setOnClickListener(v ->  launcher.launch("") );
+
+
+
+        ImageButton imageButton = findViewById(R.id.imageButton);
+        final boolean[] isImage1 = {true}; // Indica qué imagen está actualmente visible
+
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Cambia el idioma
+                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                String selectedLanguage;
+                if (isImage1[0]) {
+                    selectedLanguage = "en";
+                } else {
+                    selectedLanguage = "es";
+                }
+                prefs.edit().putString("selected_language", selectedLanguage).apply(); // Actualiza la preferencia de idioma
+
+                Locale locale = new Locale(selectedLanguage);
+                Locale.setDefault(locale);
+                Configuration config = new Configuration();
+                config.setLocale(locale);
+                getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+
+                // Cambia la imagen
+                if (isImage1[0] == true) {
+                    imageButton.setImageResource(R.drawable.ic_toggle_on);
+                    isImage1[0] = false;
+
+                } else {
+                    imageButton.setImageResource(R.drawable.ic_toggle_off);
+                    isImage1[0] = true;
+                }
+            }
+
+        });
+
+
+
     }
 
 
@@ -128,5 +169,16 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void setLocale(String lang) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putString("selected_language", lang);
+        editor.apply();
+
+        // Reinicia la actividad para aplicar el nuevo idioma
+        Intent refresh = new Intent(this, MainActivity.class);
+        finish();
+        startActivity(refresh);
+    }
 
 }

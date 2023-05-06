@@ -73,8 +73,17 @@ public class RutasAdapter extends RecyclerView.Adapter<RutasAdapter.RutaViewHold
             this.ruta = ruta;
             viewBinding.tvNombreRuta.setText(ruta.getNombre_ruta());
             viewBinding.tvExplorador.setText(ruta.getExplorador());
-            viewBinding.tvValoracion.setText(String.valueOf(ruta.getValoracion()));
-            viewBinding.tvDificultad.setText(String.valueOf(ruta.getDificultad()));
+
+
+            viewBinding.tvPick.setText(R.string.tvPickText);
+            viewBinding.tvAnd.setText(R.string.tvAnd);
+
+            viewBinding.tvValoracion.setText(R.string.tvValoracionText);
+            viewBinding.tvDificultad.setText(R.string.tvDificultadText);
+
+            //No quiero que me lo muestre, si no pulsar el boton no tendria sentido, ya verias de por si toda la info
+            //viewBinding.tvValoracion.setText(String.valueOf(ruta.getValoracion()));
+            //viewBinding.tvDificultad.setText(String.valueOf(ruta.getDificultad()));
         }
     }
 

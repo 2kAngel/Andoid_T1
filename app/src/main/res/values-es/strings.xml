@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Rutas Senderismo</string>
+    <string name="label_save">Guardar</string>
+    <string name="hint_nombreRuta">Nombre Ruta</string>
+    <string name="hint_dificultad">Dificultad</string>
+    <string name="hint_explorador">Explorador</string>
+    <string name="tvDificultadText">Dificultad</string>
+    <string name="tvPickText">Clica para ver:</string>
+    <string name="tvAnd">Y</string>
+    <string name="tvFacilText">Facil</string>
+    <string name="tvModeradoText">Moderado</string>
+    <string name="tvDificilText">Dificil</string>
+    <string name="tvValoracionText">Valoracion</string>
+    <string name="tvID">ID-></string>
+    <string name="tvROUTE">RUTA -></string>
+    <string name="tvEXPLORER">EXPLORADOR -></string>
+    <string name="tvASSESSMENT">VALORACION -></string>
+    <string name="tvDIFFICULTY">DIFICULTAD -></string>
+    <string name="toggle_button">Español</string>
+    <string name="toggle_button_description">Cambiar Idioma</string>
+    <string name="add_button_description">Añadir Ruta</string>
+</resources>

@@ -9,8 +9,14 @@ public class RutasApplication extends Application
 
     @Override
     public void onCreate() {
+
+
+
+
         super.onCreate();
         repository = new Repository();
+
+
     }
 
 

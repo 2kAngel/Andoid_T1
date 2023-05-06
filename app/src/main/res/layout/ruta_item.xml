@@ -16,6 +16,7 @@
         <TextView
             android:id="@+id/tvNombreRuta"
             tool:text="CAMINO DE SANTIAGO"
+            android:textColor="@color/orange"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -27,35 +28,63 @@
         <TextView
 
             android:id="@+id/tvExplorador"
-            tool:text="PACO SUAREZ"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:textColor="@color/orange"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvNombreRuta"
 
-            />
+            app:layout_constraintVertical_bias="0.285"
+            tool:text="PACO SUAREZ" />
+
+        <TextView
+            android:id="@+id/tvPick"
+            tool:text="@string/tvPickText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvExplorador"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_height="wrap_content"
+             />
 
         <TextView
             android:id="@+id/tvDificultad"
+            android:textColor="@color/grey"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="28dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="50dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvExplorador"
-            tool:text="Dificultad: 8.5/10" />
+            app:layout_constraintTop_toTopOf="@id/tvPick"
+            tool:text="@string/tvDificultadText" />
+
+
+        <TextView
+            android:id="@+id/tvAnd"
+            android:textColor="@color/grey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="160dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvPick"
+            tool:text="@string/tvAnd" />
 
         <TextView
             android:id="@+id/tvValoracion"
+            android:textColor="@color/grey"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="272dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="250dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvExplorador"
-            tool:text="Valoracion: 9.3" />
+            app:layout_constraintTop_toBottomOf="@id/tvPick"
+            tool:text="@string/tvValoracionText"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

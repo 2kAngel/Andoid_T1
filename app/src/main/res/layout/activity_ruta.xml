@@ -2,10 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+>
 
     <TextView
         android:id="@+id/tvId"
+        tool:text="@string/tvID"
         app:layout_constraintVertical_chainStyle="spread"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/tvNombreRuta"
@@ -16,6 +19,7 @@
 
     <TextView
         android:id="@+id/tvNombreRuta"
+        tool:text="@string/tvROUTE"
         app:layout_constraintTop_toBottomOf="@id/tvId"
         app:layout_constraintBottom_toTopOf="@id/tvExplorador"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,6 +29,7 @@
 
     <TextView
         android:id="@+id/tvExplorador"
+        tool:text="@string/tvEXPLORER"
         app:layout_constraintTop_toBottomOf="@id/tvNombreRuta"
         app:layout_constraintBottom_toTopOf="@id/tvValoracion"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,6 +39,7 @@
 
     <TextView
         android:id="@+id/tvValoracion"
+        tool:text="@string/tvASSESSMENT"
         app:layout_constraintTop_toBottomOf="@id/tvExplorador"
         app:layout_constraintBottom_toTopOf="@id/tvDificultad"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -45,6 +51,7 @@
 
     <TextView
         android:id="@+id/tvDificultad"
+        tool:text="@string/tvDIFFICULTY"
         app:layout_constraintTop_toBottomOf="@id/tvValoracion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

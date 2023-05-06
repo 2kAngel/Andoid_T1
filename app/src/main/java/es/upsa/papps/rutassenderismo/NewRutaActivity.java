@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.SeekBar;
+import android.widget.Toolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
@@ -14,12 +15,22 @@ import es.upsa.papps.rutassenderismo.databinding.ActivityNewRutaBinding;
 
 public class NewRutaActivity extends AppCompatActivity
 {
+
+
     private ActivityNewRutaBinding viewBinding;
 
     private NewRutaViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+        //---------Go back
+
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //---------
 
         super.onCreate(savedInstanceState);
         this.viewBinding = ActivityNewRutaBinding.inflate(getLayoutInflater());

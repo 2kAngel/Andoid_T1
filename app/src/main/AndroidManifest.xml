@@ -12,18 +12,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RutasSenderismo"
         tools:targetApi="31">
+
+
         <activity
             android:name=".NewRutaActivity"
+            android:parentActivityName=".RutaActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity"
             android:exported="false" />
+        </activity>
+
         <activity
             android:name=".RutaActivity"
+            android:parentActivityName=".RutaActivity" >
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity"
             android:exported="false" />
+        </activity>
+
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

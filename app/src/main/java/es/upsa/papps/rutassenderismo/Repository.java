@@ -11,14 +11,14 @@ public class Repository
     private Map<String,Ruta> rutas = new HashMap<>();
 
     public Repository() {
-        rutas.put("a", new Ruta("a","Ruta A", "Explorador A" ,1.0 ,10));
-        rutas.put("b", new Ruta("b","Ruta B", "Explorador B" ,2.0 ,20));
-        rutas.put("c", new Ruta("c","Ruta C", "Explorador C" ,3.0 ,30));
-        rutas.put("d", new Ruta("d","Ruta D", "Explorador D" ,4.0 ,40));
-        rutas.put("e", new Ruta("e","Ruta E", "Explorador E" ,5.0 ,50));
-        rutas.put("f", new Ruta("f","Ruta F", "Explorador F" ,6.0 ,60));
-        rutas.put("g", new Ruta("g","Ruta G", "Explorador G" ,7.0 ,70));
-        rutas.put("h", new Ruta("h","Ruta H", "Explorador H" ,8.0 ,80));
+        rutas.put("a", new Ruta("a","R A", "Expl A" ,1.0 ,10));
+        rutas.put("b", new Ruta("b","R B", "Expl B" ,2.0 ,20));
+        rutas.put("c", new Ruta("c","R C", "Expl C" ,3.0 ,30));
+        rutas.put("d", new Ruta("d","R D", "Expl D" ,4.0 ,40));
+        rutas.put("e", new Ruta("e","R E", "Expl E" ,5.0 ,50));
+        rutas.put("f", new Ruta("f","R F", "Expl F" ,6.0 ,60));
+        rutas.put("g", new Ruta("g","R G", "Expl G" ,7.0 ,70));
+        rutas.put("h", new Ruta("h","R H", "Expl H" ,8.0 ,80));
     }
 
     public List<Ruta> getRutas()

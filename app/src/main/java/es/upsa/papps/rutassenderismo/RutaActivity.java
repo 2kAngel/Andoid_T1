@@ -17,6 +17,14 @@ public class RutaActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+
+        //---------Go back . nop
+
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //---------
+
         super.onCreate(savedInstanceState);
         this.viewBinding = ActivityRutaBinding.inflate(getLayoutInflater());
         setContentView(viewBinding.getRoot());
@@ -26,10 +34,16 @@ public class RutaActivity extends AppCompatActivity
         String idRuta = intent.getStringExtra("idRuta");
         Ruta ruta = viewModel.findRutaByid(idRuta);
 
-        viewBinding.tvId.setText("ID -> "+ruta.getId());
-        viewBinding.tvNombreRuta.setText("Ruta -> "+ruta.getNombre_ruta());
-        viewBinding.tvExplorador.setText("Explorador -> "+ruta.getExplorador());
-        viewBinding.tvValoracion.setText("Valoracion -> " + String.valueOf(ruta.getValoracion())+"/10");
-        viewBinding.tvDificultad.setText("Dificultad -> "+String.valueOf(ruta.getDificultad())+"/100");
+        String textoID = getString(R.string.tvID);
+        String textoNR = getString(R.string.tvROUTE);
+        String textoEX = getString(R.string.tvEXPLORER);
+        String textoVA = getString(R.string.tvASSESSMENT);
+        String textoDI = getString(R.string.tvDIFFICULTY);
+
+        viewBinding.tvId.setText(textoID+ruta.getId());
+        viewBinding.tvNombreRuta.setText(textoNR+ruta.getNombre_ruta());
+        viewBinding.tvExplorador.setText(textoEX+ruta.getExplorador());
+        viewBinding.tvValoracion.setText(textoVA+String.valueOf(ruta.getValoracion())+"/10");
+        viewBinding.tvDificultad.setText(textoDI+String.valueOf(ruta.getDificultad())+"/100");
     }
 }

@@ -1,7 +1,23 @@
 <resources>
-    <string name="app_name">RutasSenderismo</string>
-        <string name="label_save">Save</string>
-        <string name="hint_nombreRuta">Nombre de la ruta</string>
-        <string name="hint_dificultad">Dificultad</string>
-        <string name="hint_explorador">Explorador</string>
+    <string name="app_name">"Hiking Route"</string>
+    <string name="label_save">Save</string>
+    <string name="tvDificultadText">Difficulty</string>
+    <string name="tvFacilText">Easy</string>
+    <string name="tvModeradoText">Moderate</string>
+    <string name="tvDificilText">Hard</string>
+    <string name="tvValoracionText">Assessment</string>
+    <string name="hint_nombreRuta">Route Name</string>
+    <string name="hint_dificultad">Difficulty</string>
+    <string name="hint_explorador">Explorer</string>
+    <string name="tvPickText">Click To See:</string>
+    <string name="tvAnd">AND</string>
+    <string name="tvID">ID -></string>
+    <string name="tvROUTE">ROUTE -></string>
+    <string name="tvEXPLORER">EXPLORER -></string>
+    <string name="tvASSESSMENT">ASSESSMENT -></string>
+    <string name="tvDIFFICULTY">DIFFICULTY -></string>
+    <string name="toggle_button">English</string>
+    <string name="toggle_button_description">Change Languaje</string>
+    <string name="add_button_description">Add Route</string>
+
 </resources>
