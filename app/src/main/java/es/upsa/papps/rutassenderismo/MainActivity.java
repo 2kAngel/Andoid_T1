@@ -89,10 +89,13 @@ public class MainActivity extends AppCompatActivity {
                 if (isImage1[0] == true) {
                     imageButton.setImageResource(R.drawable.ic_toggle_on);
                     isImage1[0] = false;
+                    setTitle(R.string.app_name);
 
                 } else {
                     imageButton.setImageResource(R.drawable.ic_toggle_off);
                     isImage1[0] = true;
+                    setTitle(R.string.app_name);
+
                 }
             }
 
