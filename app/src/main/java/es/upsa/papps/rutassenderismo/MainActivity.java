@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         viewBinding.btNew.setOnClickListener(v ->  launcher.launch("") );
 
 
-
+        //Cambio de idioma con ImageButton
         ImageButton imageButton = findViewById(R.id.imageButton);
         final boolean[] isImage1 = {true}; // Indica qué imagen está actualmente visible
 
@@ -90,12 +90,12 @@ public class MainActivity extends AppCompatActivity {
                     imageButton.setImageResource(R.drawable.ic_toggle_on);
                     isImage1[0] = false;
                     setTitle(R.string.app_name);
-
+                        listarRutas();
                 } else {
                     imageButton.setImageResource(R.drawable.ic_toggle_off);
                     isImage1[0] = true;
                     setTitle(R.string.app_name);
-
+                        listarRutas();
                 }
             }
 
