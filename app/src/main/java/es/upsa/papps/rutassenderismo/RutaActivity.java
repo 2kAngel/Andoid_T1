@@ -18,7 +18,7 @@ public class RutaActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
 
 
-        //---------Go back . nop
+        //---------Go back
 
         getSupportActionBar().setDisplayShowTitleEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">"Hiking Route"</string>
+    <string name="app_name1">"Hiking Route"</string>
+    <string name="app_name2">"Hiking Route"</string>
     <string name="label_save">Save</string>
     <string name="tvDificultadText">Difficulty</string>
     <string name="tvFacilText">Easy</string>

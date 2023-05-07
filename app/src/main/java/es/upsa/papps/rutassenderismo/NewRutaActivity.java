@@ -30,6 +30,7 @@ public class NewRutaActivity extends AppCompatActivity
         getSupportActionBar().setDisplayShowTitleEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+
         //---------
 
         super.onCreate(savedInstanceState);

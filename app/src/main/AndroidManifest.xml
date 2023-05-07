@@ -18,6 +18,7 @@
 
         <activity
             android:name=".NewRutaActivity"
+
             android:parentActivityName=".RutaActivity">
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"

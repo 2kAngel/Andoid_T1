@@ -66,6 +66,9 @@ public class MainActivity extends AppCompatActivity {
         ImageButton imageButton = findViewById(R.id.imageButton);
         final boolean[] isImage1 = {true}; // Indica qué imagen está actualmente visible
 
+
+
+
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,12 +93,16 @@ public class MainActivity extends AppCompatActivity {
                     imageButton.setImageResource(R.drawable.ic_toggle_on);
                     isImage1[0] = false;
                     setTitle(R.string.app_name);
-                        listarRutas();
+                    listarRutas();//para que el idioma del repositorio se actualice
+                    //setTitle(R.string.app_name2);//Si quiero traducir tambien los titulos en las demas vistas, tendría que quitar el label de AndroidManifest, y ponerlo en los layouts, pero la primera vez que entras, en vez de ese titulo sale la ruta .es.upsa.papps... y en los casos de Crear y ver no merece la pena porque no hay un boton que actualice dichas vistas(siempre verias la ruta)
+                    //setTitle(R.string.app_name1);
                 } else {
                     imageButton.setImageResource(R.drawable.ic_toggle_off);
                     isImage1[0] = true;
                     setTitle(R.string.app_name);
-                        listarRutas();
+                    listarRutas();
+                    //setTitle(R.string.app_name1);
+                    //setTitle(R.string.app_name2);
                 }
             }
 
